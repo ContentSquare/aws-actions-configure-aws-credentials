@@ -12,7 +12,7 @@ inputs:
   aws-region:
     description: AWS Region, e.g. us-east-2
     required: true
-    default: process.env[INPUT_AWS-REGION]
+    default: $process.env[INPUT_AWS-REGION]
   role-to-assume:
     description: The Amazon Resource Name (ARN) of the role to assume. Use the provided credentials to assume an IAM role and configure the Actions environment with the assumed role credentials rather than with the provided credentials.
     required: false
