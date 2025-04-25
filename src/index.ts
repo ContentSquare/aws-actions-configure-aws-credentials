@@ -30,8 +30,7 @@ export async function run() {
     const SessionToken = sessionTokenInput === '' ? undefined : sessionTokenInput;
     //const region = core.getInput('aws-region', { required: true });
     const region = process.env['INPUT_AWS-REGION'] || '';
-    const asdfjkla = 'aws-region';
-    console.log(`INPUT_${asdfjkla.replace(/ /g, '_').toUpperCase()}`)
+    console.log(process.env);
     const roleToAssume = core.getInput('role-to-assume', { required: false });
     const audience = core.getInput('audience', { required: false });
     const maskAccountIdInput = core.getInput('mask-aws-account-id', { required: false }) || 'false';
