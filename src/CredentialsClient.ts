@@ -19,7 +19,7 @@ export class CredentialsClient {
 
   constructor(props: CredentialsClientProps) {
     this.region = props.region;
-    if (props.proxyServer !== undefined ) {
+    if (props.proxyServer !== undefined && props.proxyServer !== 'undefined') {
       if (process.env.HTTP_PROXY) info(`http proxy = ${process.env.HTTP_PROXY}`);
       if (process.env.HTTPS_PROXY) info(`https proxy = ${process.env.HTTPS_PROXY}`);
       info('hi hello hi hello whats up');
