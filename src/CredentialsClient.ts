@@ -20,6 +20,7 @@ export class CredentialsClient {
   constructor(props: CredentialsClientProps) {
     this.region = props.region;
     if (props.proxyServer) {
+      info('hi hello hi hello whats up');
       info('Configuring proxy handler for STS client');
       info(`proxy server: ${props.proxyServer}`);
       const handler = new HttpsProxyAgent(props.proxyServer);
