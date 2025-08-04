@@ -21,6 +21,7 @@ export class CredentialsClient {
     this.region = props.region;
     if (props.proxyServer) {
       info('Configuring proxy handler for STS client');
+      info(`proxy server: ${props.proxyServer}`);
       const handler = new HttpsProxyAgent(props.proxyServer);
       this.requestHandler = new NodeHttpHandler({
         httpAgent: handler,
