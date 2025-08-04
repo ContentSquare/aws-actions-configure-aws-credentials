@@ -19,12 +19,8 @@ export class CredentialsClient {
 
   constructor(props: CredentialsClientProps) {
     this.region = props.region;
-    if (props.proxyServer !== undefined && props.proxyServer !== 'undefined') {
-      if (process.env.HTTP_PROXY) info(`http proxy = ${process.env.HTTP_PROXY}`);
-      if (process.env.HTTPS_PROXY) info(`https proxy = ${process.env.HTTPS_PROXY}`);
-      info('hi hello hi hello whats up');
+    if (props.proxyServer) {
       info('Configuring proxy handler for STS client');
-      info(`proxy server: ${props.proxyServer}`);
       const handler = new HttpsProxyAgent(props.proxyServer);
       this.requestHandler = new NodeHttpHandler({
         httpAgent: handler,
