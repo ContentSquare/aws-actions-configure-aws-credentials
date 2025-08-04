@@ -17,7 +17,11 @@ const USER_AGENT = 'configure-aws-credentials-for-github-actions';
 class CredentialsClient {
     constructor(props) {
         this.region = props.region;
-        if (props.proxyServer) {
+        if (props.proxyServer !== undefined) {
+            if (process.env.HTTP_PROXY)
+                (0, core_1.info)(process.env.HTTP_PROXY);
+            if (process.env.HTTPS_PROXY)
+                (0, core_1.info)(process.env.HTTPS_PROXY);
             (0, core_1.info)('hi hello hi hello whats up');
             (0, core_1.info)('Configuring proxy handler for STS client');
             (0, core_1.info)(`proxy server: ${props.proxyServer}`);
