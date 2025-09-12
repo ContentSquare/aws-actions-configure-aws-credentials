@@ -68,11 +68,11 @@ export async function run() {
       }, globalTimeout * 1000);
     }
 
-    if (forceSkipOidc && roleToAssume && !AccessKeyId && !webIdentityTokenFile) {
-      throw new Error(
-        "If 'force-skip-oidc' is true and 'role-to-assume' is set, 'aws-access-key-id' or 'web-identity-token-file' must be set",
-      );
-    }
+    //if (forceSkipOidc && roleToAssume && !AccessKeyId && !webIdentityTokenFile) {
+    //  throw new Error(
+    //    "If 'force-skip-oidc' is true and 'role-to-assume' is set, 'aws-access-key-id' or 'web-identity-token-file' must be set",
+    //  );
+    //}
 
     if (specialCharacterWorkaround) {
       // 😳
